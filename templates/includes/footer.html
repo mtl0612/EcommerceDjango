@@ -1,0 +1,71 @@
+{% load static %}
+
+<!-- ========================= FOOTER ========================= -->
+		<!-- FOOTER -->
+		<footer id="footer">
+			<!-- top footer -->
+			<div class="section">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<div class="col-md-5 col-xs-12">
+							<div class="footer">
+								<h3 class="footer-title">Map</h3>
+								<div id="map-container-google-1" class="z-depth-1-half map-container" style="max-width:400px">
+									<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3698.0183009625457!2d106.76166813721005!3d10.89417569797619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDUzJzM2LjAiTiAxMDbCsDQ1JzM3LjciRQ!5e0!3m2!1sen!2s!4v1674978792815!5m2!1sen!2s" frameborder="0"
+									  style="border:0" allowfullscreen></iframe>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title text-center">About Us</h3>
+								<p></p>
+								<ul class="footer-links">
+									<li><i class="fa fa-map-marker"></i>33, Street No. 10, Di An City, Binh Duong Province.</li>
+									<li><i class="fa fa-phone"></i>+84-81-3939-362</li>
+									<li><i class="fa fa-envelope-o"></i>minhtung1992@gmail.com</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer text-right">
+								<h3 class="footer-title">Categories</h3>
+								<ul class="footer-links">
+									{% for category in links %}
+									<li><a href="{% url 'products_by_category' category.slug %}">{{ category.category_name }}</a></li>
+								  	{% endfor %}
+								</ul>
+							</div>
+						</div>
+
+						<div class="clearfix visible-xs"></div>
+
+					</div>
+					<!-- /row -->
+				</div>
+				<!-- /container -->
+			</div>
+			<!-- /top footer -->
+
+			<!-- bottom footer -->
+			<div id="bottom-footer" class="section">
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<span class="copyright">
+								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</a>
+							</span>
+						</div>
+					</div>
+						<!-- /row -->
+				</div>
+				<!-- /container -->
+			</div>
+			<!-- /bottom footer -->
+		</footer>
+		<!-- /FOOTER -->
+<!-- ========================= FOOTER END // ========================= -->

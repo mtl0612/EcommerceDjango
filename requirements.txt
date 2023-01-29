@@ -1,0 +1,22 @@
+asgiref
+boto3
+botocore
+certifi
+chardet
+Django
+# django-admin-honeypot
+django-admin-thumbnails
+django-session-timeout
+django-storages
+idna
+jmespath
+Pillow
+psycopg2-binary
+python-dateutil
+python-decouple
+pytz
+requests
+s3transfer
+six
+sqlparse
+urllib3

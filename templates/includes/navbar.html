@@ -1,0 +1,22 @@
+{% load static %}
+
+		<!-- NAVIGATION -->
+		<nav id="navigation">
+			<!-- container -->
+			<div class="container">
+				<!-- responsive-nav -->
+				<div id="responsive-nav">
+					<!-- NAV -->
+					<ul class="main-nav nav navbar-nav">
+						<li class="active"><a href="#">Home</a></li>
+						{% for category in links %}
+						<li><a href="{% url 'products_by_category' category.slug %}">{{ category.category_name }}</a></li>
+					  	{% endfor %}						
+					</ul>
+					<!-- /NAV -->
+				</div>
+				<!-- /responsive-nav -->
+			</div>
+			<!-- /container -->
+		</nav>
+		<!-- /NAVIGATION -->
