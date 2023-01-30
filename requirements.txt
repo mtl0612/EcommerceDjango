@@ -4,14 +4,13 @@ botocore
 certifi
 chardet
 Django
-# django-admin-honeypot
 django-admin-thumbnails
 django-session-timeout
 django-storages
+django-environ
 idna
 jmespath
 Pillow
-psycopg2-binary
 python-dateutil
 python-decouple
 pytz
@@ -20,3 +19,4 @@ s3transfer
 six
 sqlparse
 urllib3
+
