@@ -167,6 +167,7 @@ def dashboard(request):
         userprofile.user_id = request.user.id
         userprofile.profile_picture = 'default/default-user.png'
         userprofile.save()
+        
     context = {
         'orders_count': orders_count,
         'userprofile': userprofile,

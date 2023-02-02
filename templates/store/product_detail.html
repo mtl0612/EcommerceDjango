@@ -218,14 +218,18 @@
                         <div class="product-options">
                             <label>
                                 Size
-                                <select class="input-select">
-                                    <option value="0">X</option>
+                                <select name="size" class="input-select" required>
+                                    {% for variation in single_product.variation_set.sizes %}
+                                    <option value="{{ variation.variation_value | lower }}">{{ variation.variation_value | capfirst }}</option>
+                                    {% endfor %}
                                 </select>
                             </label>
                             <label>
                                 Color
-                                <select class="input-select">
-                                    <option value="0">Red</option>
+                                <select name="color" class="input-select" required>
+                                    {% for variation in single_product.variation_set.colors %}
+                                    <option value="{{ variation.variation_value | lower }}">{{ variation.variation_value | capfirst }}</option>
+                                    {% endfor %}
                                 </select>
                             </label>
                         </div>
