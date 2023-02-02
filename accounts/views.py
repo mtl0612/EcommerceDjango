@@ -31,7 +31,11 @@ def register(request):
             username = email.split("@")[0]
             user = Account.objects.create_user(first_name=first_name, last_name=last_name, email=email, username=username, password=password)
             user.phone_number = phone_number
+            # active user for demo purpose
+            user.is_active = True
             user.save()
+
+            
 
             # Create a user profile
             profile = UserProfile()
@@ -51,7 +55,7 @@ def register(request):
             to_email = email
             send_email = EmailMessage(mail_subject, message, to=[to_email])
             send_email.send()
-            # messages.success(request, 'Thank you for registering with us. We have sent you a verification email to your email address [rathan.kumar@gmail.com]. Please verify it.')
+            
             return redirect('/accounts/login/?command=verification&email='+email)
     else:
         form = RegistrationForm()
@@ -155,7 +159,14 @@ def dashboard(request):
     orders = Order.objects.order_by('-created_at').filter(user_id=request.user.id, is_ordered=True)
     orders_count = orders.count()
 
-    userprofile = UserProfile.objects.get(user_id=request.user.id)
+    try:
+        userprofile = UserProfile.objects.get(user_id=request.user.id)
+    except UserProfile.DoesNotExist:
+        # Create a user profile
+        userprofile = UserProfile()
+        userprofile.user_id = request.user.id
+        userprofile.profile_picture = 'default/default-user.png'
+        userprofile.save()
     context = {
         'orders_count': orders_count,
         'userprofile': userprofile,
