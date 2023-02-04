@@ -95,14 +95,6 @@
 							<dt>Total price:</dt>
 							<dd class="text-right">$ {{total}}</dd>
 						</dl>
-						<dl class="dlist-align">
-							<dt>Tax:</dt>
-							<dd class="text-right"> $ {{tax}}</dd>
-						</dl>
-						<dl class="dlist-align">
-							<dt>Grand Total:</dt>
-							<dd class="text-right text-dark b"><strong>$ {{grand_total}}</strong></dd>
-						</dl>
 						<hr>
 						<p class="text-center mb-3">
 							<img src="{% static './images/misc/payments.png' %}" height="26">
@@ -147,7 +139,7 @@
     return cookieValue;
 }
 
-	var amount = "{{ grand_total }}"
+	var amount = "{{ total }}"
 	var url = "{% url 'payments' %}"
 	var csrftoken = getCookie('csrftoken');
 	var orderID = "{{order.order_number}}"
