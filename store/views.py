@@ -54,6 +54,13 @@ def product_detail(request, category_slug, product_slug):
 
     # Get the reviews
     reviews = ReviewRating.objects.filter(product_id=single_product.id, status=True)
+    reviews_count = {}
+    reviews_count['total'] = reviews.count()
+    reviews_count['one'] = reviews.filter(rating=1).count()
+    reviews_count['two'] = reviews.filter(rating=2).count()
+    reviews_count['three'] = reviews.filter(rating=3).count()
+    reviews_count['four'] = reviews.filter(rating=4).count()
+    reviews_count['five'] = reviews.filter(rating=5).count()
 
     # Get the product gallery
     product_gallery = ProductGallery.objects.filter(product_id=single_product.id)
@@ -63,6 +70,7 @@ def product_detail(request, category_slug, product_slug):
         'in_cart'       : in_cart,
         'orderproduct': orderproduct,
         'reviews': reviews,
+        'reviews_count': reviews_count,
         'product_gallery': product_gallery,
     }
     return render(request, 'store/product_detail.html', context)

@@ -140,9 +140,9 @@
                                                     <i class="fa fa-star"></i>
                                                 </div>
                                                 <div class="rating-progress">
-                                                    <div style="width: 80%;"></div>
+                                                    <div style="width: {% widthratio reviews_count.five reviews_count.total 100 %}%;"></div>
                                                 </div>
-                                                <span class="sum">3</span>
+                                                <span class="sum">{{ reviews_count.five }}</span>
                                             </li>
                                             <li>
                                                 <div class="rating-stars">
@@ -153,9 +153,9 @@
                                                     <i class="fa fa-star-o"></i>
                                                 </div>
                                                 <div class="rating-progress">
-                                                    <div style="width: 60%;"></div>
+                                                    <div style="width: {% widthratio reviews_count.four reviews_count.total 100 %}%;"></div>
                                                 </div>
-                                                <span class="sum">2</span>
+                                                <span class="sum">{{ reviews_count.four }}</span>
                                             </li>
                                             <li>
                                                 <div class="rating-stars">
@@ -166,9 +166,9 @@
                                                     <i class="fa fa-star-o"></i>
                                                 </div>
                                                 <div class="rating-progress">
-                                                    <div></div>
+                                                    <div style="width: {% widthratio reviews_count.three reviews_count.total 100 %}%;"></div>
                                                 </div>
-                                                <span class="sum">0</span>
+                                                <span class="sum">{{ reviews_count.three }}</span>
                                             </li>
                                             <li>
                                                 <div class="rating-stars">
@@ -179,9 +179,9 @@
                                                     <i class="fa fa-star-o"></i>
                                                 </div>
                                                 <div class="rating-progress">
-                                                    <div></div>
+                                                    <div style="width: {% widthratio reviews_count.two reviews_count.total 100 %}%;"></div>
                                                 </div>
-                                                <span class="sum">0</span>
+                                                <span class="sum">{{ reviews_count.two }}</span>
                                             </li>
                                             <li>
                                                 <div class="rating-stars">
@@ -192,9 +192,9 @@
                                                     <i class="fa fa-star-o"></i>
                                                 </div>
                                                 <div class="rating-progress">
-                                                    <div></div>
+                                                    <div style="width: {% widthratio reviews_count.one reviews_count.total 100 %}%;"></div>
                                                 </div>
-                                                <span class="sum">0</span>
+                                                <span class="sum">{{ reviews_count.one }}</span>
                                             </li>
                                         </ul>
                                     </div>
