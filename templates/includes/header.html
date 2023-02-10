@@ -19,7 +19,7 @@
 						<!-- /LOGO -->
 
 						<!-- SEARCH BAR -->
-						<div class="col-md-6">
+						<div class="col-md-6 hidden-xs">
 							<div class="header-search">
 								<form action="{% url 'search' %}" method='GET'>
 									<select class="input-select">
@@ -29,13 +29,13 @@
 										{% endfor %}
 									</select>
 									<input type="text" class="input" placeholder="Search" name="key">
-									<button class="search-btn" type="submit">Search</button>
+									<button class="search-btn " type="submit">Search</button>
 								</form>
 							</div>
 						</div>
 						<!-- /SEARCH BAR -->
 
-						<div class="col-xs-6 col-md-2" >
+						<div class="col-xs-6 col-md-2 hidden-xs" >
 							{% if user.id is None %}
 							<div class="header-links">
 							  <span>Welcome guest!</span>

@@ -19,4 +19,5 @@ s3transfer
 six
 sqlparse
 urllib3
+django-rest-framework
 

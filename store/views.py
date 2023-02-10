@@ -1,15 +1,18 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from .models import Product, ReviewRating, ProductGallery
-from category.models import Category
-from carts.models import CartItem
-from django.db.models import Q
-
-from carts.views import _cart_id
-from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
-from django.http import HttpResponse
-from .forms import ReviewForm
 from django.contrib import messages
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.db.models import Q
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, redirect, render
+from rest_framework import generics
+
+from carts.models import CartItem
+from carts.views import _cart_id
+from category.models import Category
 from orders.models import OrderProduct
+
+from .forms import ReviewForm
+from .models import Product, ProductGallery, ReviewRating
+from .serializers import ProductSerializer
 
 
 def store(request, category_slug=None):
@@ -111,3 +114,7 @@ def submit_review(request, product_id):
                 data.save()
                 messages.success(request, 'Thank you! Your review has been submitted.')
                 return redirect(url)
+
+class ProductListView(generics.ListAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer

@@ -97,15 +97,15 @@
                 <div id="product-tab">
                     <!-- product tab nav -->
                     <ul class="tab-nav">
-                        <li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
-                        <li><a data-toggle="tab" href="#tab2">Reviews ({{single_product.countReview}})</a></li>
+                        <li><a data-toggle="tab" href="#tab1">Description</a></li>
+                        <li class="active"><a data-toggle="tab" href="#tab2">Reviews ({{single_product.countReview}})</a></li>
                     </ul>
                     <!-- /product tab nav -->
 
                     <!-- product tab content -->
                     <div class="tab-content">
                         <!-- tab1  -->
-                        <div id="tab1" class="tab-pane fade in active">
+                        <div id="tab1" class="tab-pane fade in">
                             <div class="row">
                                 <div class="col-md-12">
                                     <p>{{ single_product.description }}</p>
@@ -115,7 +115,7 @@
                         <!-- /tab1  -->
 
                         <!-- tab2  -->
-                        <div id="tab2" class="tab-pane fade in">
+                        <div id="tab2" class="tab-pane fade in active">
                             <div class="row">
                                 <!-- Rating -->
                                 <div class="col-md-3">
@@ -236,6 +236,7 @@
                                 <!-- Review Form -->
                                 <div class="col-md-3">
                                     <div id="review-form">
+                                        {% include 'includes/alerts.html' %}
                                         <form class="review-form" action="{% url 'submit_review' single_product.id %}" method="POST">
                                             {% csrf_token %}                                            
                                             <input class="input" type="text" name="subject" placeholder="Subject">
@@ -243,7 +244,7 @@
                                             <div class="input-rating">
                                                 <span>Your Rating: </span>
                                                 <div class="stars">
-                                                    <input id="star5" name="rating" value="5" type="radio"><label for="star5"></label>
+                                                    <input id="star5" name="rating" value="5" type="radio" checked><label for="star5"></label>
                                                     <input id="star4" name="rating" value="4" type="radio"><label for="star4"></label>
                                                     <input id="star3" name="rating" value="3" type="radio"><label for="star3"></label>
                                                     <input id="star2" name="rating" value="2" type="radio"><label for="star2"></label>
