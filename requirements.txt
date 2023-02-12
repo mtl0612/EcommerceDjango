@@ -8,6 +8,7 @@ django-admin-thumbnails
 django-session-timeout
 django-storages
 django-environ
+django-cors-headers
 idna
 jmespath
 Pillow
